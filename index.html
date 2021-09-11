@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+    .country .col
+    {
+        font-weight: bold;
+    }
+    .country ~ .row > .col
+    {
+        font-family: Garamond;
+        font-size: 0.8rem;
+    }
+    .country
+    {
+        margin-top:1rem;
+        margin-bottom: 1rem;
+    }
+    .flag1
+    {
+        border-radius: 0.5rem;
+        margin: 2rem;
+        box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(207, 207, 207);
+    }
+    span{
+        font-weight: bold;
+    }
+        .flag1 > .row:nth-last-child(1)
+    {
+        margin-bottom: 2rem;
+    }
+    .img
+    {  width:100%;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+    .row > .image
+    {
+        padding:0px;
+    }
+    body{
+        align-items:center;
+        display: flex;
+    }
+    .row:nth-child(1)
+    {
+        width:fit-content;
+    }
+</style>
+
+    </head>
+<body> 
+    <script>
+
+let countriesInfo = [
+                                {   name: "Germany",
+                                    population: "81,770,900",
+                                    region: "Europe",
+                                    flag:       "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png",     
+                                    capital: "Berlin"   },
+                                {   name: "United states",
+                                    population: "323,947,000",
+                                    region: "Americas",
+                                    flag:       "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/640px-Flag_of_the_United_States.svg.png",
+                                    capital: "Washington D.C"   },
+                                {   name: "Brazil",
+                                    population: "206,135,893",
+                                    region: "Americas",
+                                    flag:       "https://upload.wikimedia.org/wikipedia/commons/0/01/Brazil_flag_300.png",
+                                    capital: "Brasilia"   },
+                                {   name: "Iceland",
+                                    population: "334,300",     
+                                    region: "Europe",
+                                    flag:     "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/640px-Flag_of_Iceland.svg.png",
+                                    capital: "Reykjavik" }
+                            ];
+let maincontainer = document.createElement('div');
+maincontainer.className = 'container';
+document.body.append(maincontainer);
+let row = document.createElement('div');
+row.className ='row';
+maincontainer.append(row);
+for ( let country in countriesInfo)
+{
+    row.innerHTML +=`<div class="col-md-5 col-lg-2 col-6 flag1">
+                <div class="row"><div class="col image"><img class="img" src=${countriesInfo[country].flag}></div></div>
+                <div class="row country"><div class="col">${countriesInfo[country].name}</div></div>
+                <div class="row"><div class="col"><span>Population: </span>${countriesInfo[country].population}</div></div>
+                <div class="row"><div class="col"><span>Region: </span>${countriesInfo[country].region}</div></div>
+                <div class="row"><div class="col"><span>Capital: </span>${countriesInfo[country].capital}</div></div>
+            </div>`
+
+}
+
+    </script> 
+</body>
+</html>
